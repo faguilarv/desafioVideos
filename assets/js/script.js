@@ -41,7 +41,7 @@ class Reproductor extends Multimedia {
     }
     //se crea el metodo multimedia que llama a la funcion publica del IIFE
     playMultimedia() {
-        desafioVideos.publico(this.#elemento, this.url)
+        desafioVideos.publico(this.#elemento, this.url) //this.url
     }
     setInicio(tiempo) {
         desafioVideos.publico(this.#elemento, `${this.url}?start=${tiempo}`)
@@ -51,18 +51,19 @@ class Reproductor extends Multimedia {
 
 //se instancia para insertar las url correspondiente a cada sección
 const musica = new Reproductor(domMusica, "https://www.youtube.com/embed/ciCYd9B2UWQ?si=tbiC1mu--uAEVy3h")
-
 musica.setInicio(50)
 musica.playMultimedia()
 
-const peliculas = new Reproductor(domPeliculas, "https://www.youtube.com/embed/V-mugKDQDlg?si=MnDNppEizrrrlRxX")
 
-musica.setInicio(50)
+const peliculas = new Reproductor(domPeliculas, "https://www.youtube.com/embed/V-mugKDQDlg?si=MnDNppEizrrrlRxX")
+peliculas.setInicio(10)
 peliculas.playMultimedia()
 
 
-const series = new Reproductor(domSeries, "https://www.youtube.com/embed/uPOONJlXRr4?si=wpN4hY5t5vD1XoJA")
 
-musica.setInicio(50)
+const series = new Reproductor(domSeries, "https://www.youtube.com/embed/uPOONJlXRr4?si=wpN4hY5t5vD1XoJA")
+series.setInicio(20)
 series.playMultimedia()
+
+
 
